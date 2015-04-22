@@ -1,13 +1,31 @@
 <html>
   <head>
     <script language="Javascript" type="text/javascript" src="../common/jquery.js"></script>
+    <script language="Javascript" type="text/javascript" src="../common/d3.min.js"></script>
     <script language="Javascript" type="text/javascript" src="./js1.js"></script>
+    <script language="Javascript" type="text/javascript" src="./d3AS.js"></script>
     <link href="./estilos.css" rel="stylesheet" />
   </head>
   <body>
+    <div id="boton1">Boton1</div>
+    <div id="boton1">Boton2</div>
     <div id="nodopadre" class="parent">capa padre</div>
     <script language="Javascript" type="text/javascript">
-      pinta(500, "nodopadre", "c_hijo");
+      /*pinta(50000, "nodopadre", "c_hijo");*/
+      $("#boton1").click(pinta(50, "nodopadre", "c_hijo_boton1_" + Math.floor((Math.random() * 10) + 1)));
+      $("#boton2").click(pinta(50, "nodopadre", "c_hijo_boton2_" + Math.floor((Math.random() * 10) + 1)));
+      pintaD3();
+
+      var datosDonut = [{etiqueta: 1, valor: 10},{etiqueta: 2, valor: 13},{etiqueta: 15, valor: 17},{etiqueta: 16, valor: 16},{etiqueta: 17, valor: 18},{etiqueta: 18, valor: 23},{etiqueta: 19, valor: 25}];
+      var colores = ["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"];
+      datosDonut = '';
+      pintaDonut(datosDonut, colores, 960, 500, 100);
+
     </script>
+    <div id="svg">
+      <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="20"  />
+      </svg>
+    </div>
   </body>
 </html>
