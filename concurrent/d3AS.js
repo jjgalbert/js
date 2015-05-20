@@ -14,7 +14,6 @@ var arc = d3.svg.arc().outerRadius(radius).innerRadius(radius - ancho);
 // Variable tarta
 var pie = d3.layout.pie().sort(null).value(function(d) { return d.valor; });
 // Datos
-
 var data = ( $.isArray(_datos))? _datos : [{etiqueta: "No hay datos", valor: 1}];
 ///////////// Dibujo
 // SVG y g
